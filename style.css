@@ -32,7 +32,7 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* line 1, sass/menu.sass */
-.screen-read-text, .compact-menu { display: hidden; }
+.screen-reader-text, .compact-menu { display: none; }
 
 /* line 6, sass/menu.sass */
 .main-menu.full ul li { float: left; position: relative; }
