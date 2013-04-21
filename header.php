@@ -13,17 +13,13 @@
 	<body class="PAGE-SLUG-HERE">
 		<div class="page">
 			<header>
-				<nav class="main">
+				<nav class="main-menu full">
 					<div class="screen-reader-text skip-link"><a href="#UPDATE ME" title="Skip to content">Skip to content</a></div>
-					<div class="main-menu">
+					<div class="compact-menu">
 						<a class="menu-toggle">Menu</a>
 						<?php get_search_form(); ?>
 					</div>
-					<!-- <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?> USE MARKUP BELOW AS GUIDE FOR MENU GENERATION -->
-					<ul class="menu">
-						<li></li>
-						<?php get_search_form(); ?>
-					</ul>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav>
 			</header>
 <!-- HEADER END -->
