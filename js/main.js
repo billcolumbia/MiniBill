@@ -9,11 +9,11 @@ $(document).ready(function () {
 // Will adjust classes and properties to display the correct menu
 var adjustNav = function(){
   if($(document).width() < 767){
-    $("nav.main").removeClass("full").addClass("compact");
+    $("nav.main-menu").removeClass("full").addClass("compact");
     $(".compact-menu").css("display", "block");
   }
   if($(document).width() > 767){
-    $("nav.main").removeClass("compact").addClass("full");
+    $("nav.main-menu").removeClass("compact").addClass("full");
     $(".compact-menu").css("display", "none");
   }
 }
