@@ -13,10 +13,13 @@
 	<body class="PAGE-SLUG-HERE">
 		<div class="page">
 			<header>
-				<nav>
-					<a class="menu-toggle">Menu</a>
-					<div class="screen-reader-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
-					<?php wp_nav_menu(array('container' => '')); ?>
+				<nav class="main">
+					<div class="screen-reader-text skip-link"><a href="#UPDATE ME" title="Skip to content">Skip to content</a></div>
+					<div class="main-menu">
+						<a class="menu-toggle">Menu</a>
+						<?php get_search_form(); ?>
+					</div>
+					<?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false)); ?>
 				</nav>
 			</header>
 <!-- HEADER END -->
