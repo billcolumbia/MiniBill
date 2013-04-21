@@ -4,7 +4,7 @@ $(document).ready(function () {
   $(".menu-toggle").click(function(){
     $("nav.main-menu .menu").toggle();
   });
-)};
+});
 
 // Will adjust classes and properties to display the correct menu
 var adjustNav = function(){
