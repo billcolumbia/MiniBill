@@ -1,5 +1,10 @@
 <?php
 
+function minibill_setup() {
+	register_nav_menus(array('primary' => 'Primary Menu'));
+}
+add_action( 'after_setup_theme', 'minibill_setup' );
+
 /* Remove menus from the admin dashboard
  *
  * All of the administration pages are listed here (in order of appearance in the dashboard)
