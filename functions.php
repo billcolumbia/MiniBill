@@ -1,20 +1,21 @@
 <?php
 
-function minibill_setup() {
+function setup_nav_menu() {
 	register_nav_menus(array('primary' => 'Primary Menu'));
 }
-add_action( 'after_setup_theme', 'minibill_setup' );
+add_action( 'after_setup_theme', 'setup_nav_menu' );
 
 function nav_add_search_box($items, $args) {
 
 	if ($args->theme_location === 'primary')
-		$items .= '<li class="menu-item menu-item-search">
-		<form method="get" id="searchform" action="' . esc_url( home_url( '/' ) ) . '" role="search">
-			<label for="s" class="screen-reader-text">Search</label>
-			<input type="text" class="field" name="s" value="' . esc_attr( get_search_query() ) .'" id="s" placeholder="Search &#133;" />
-			<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
-		</form>
-	</li>';
+		$items .= '						<li class="menu-item menu-item-search">
+							<form method="get" id="searchform" action="' . esc_url( home_url( '/' ) ) . '" role="search">
+								<label for="s" class="screen-reader-text">Search</label>
+								<input type="text" class="field" name="s" value="' . esc_attr( get_search_query() ) .'" id="s" placeholder="Search &#133;" />
+								<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
+							</form>
+						</li>
+					';
 
 	return $items;
 }

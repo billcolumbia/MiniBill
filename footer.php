@@ -15,7 +15,7 @@
 				email: osi@ucf.edu | ph: 407.823.6471 | fx: 407.823.5899<br />
 			</p>
 		</footer>
-
+		
 		<?php wp_footer(); ?>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
