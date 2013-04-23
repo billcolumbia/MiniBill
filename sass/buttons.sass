@@ -1,0 +1,34 @@
+// Colors
+$green: #59a345
+$red: #902828
+$orange: #e3a041
+$black: #2a2a2a
+$gray: #dedede
+$blue: #286390
+$light: #fefefe
+
+// Sizes
+$sizes: mini small large
+$modifier: .85
+@each $size in $sizes
+	.btn-#{$size}
+		font-size: 1em*$modifier 
+		padding: (.5em*$modifier) (1em*$modifier)
+		$modifier: $modifier*1.3
+
+// Defualt class
+.btn
+	-webkit-border-radius: .18em 
+	border-radius: .18em  
+	text-decoration: none
+
+// Button Mixin
+// To call: +button($color, $link-color, $size)
+=button( $color, $link-color, $size )
+	@extend .btn
+	background-color: $color
+	color: $link-color
+	@extend .btn-#{$size}
+	text-shadow: 1px 1px 0 transparentize($black,.7)
+	&:hover
+		background-color: lighten($color,5%)

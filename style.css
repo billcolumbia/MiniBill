@@ -1,3 +1,4 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 /* Theme Name: MiniBill
  * Theme URI: http://github.com/billcolumbia/MiniBill
  * Description: A minimal starting point for WordPress, adapted from Underscores.me
@@ -7,6 +8,9 @@
  * Tags: minimal, fast, light
  * License: None, feel free to hack :)
  */
+ *
+ * // Change this to whatever you'd like. This is just the defualt so we 
+ * // have something nice to prototype with. */
 /* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain)
 */
 /* line 18, sass/reset.scss */
@@ -32,7 +36,7 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* line 1, sass/menu.sass */
-.screen-read-text, .compact-menu { display: hidden; }
+.screen-reader-text, .compact-menu { display: hidden; }
 
 /* line 6, sass/menu.sass */
 .main-menu.full ul li { float: left; position: relative; }
@@ -43,3 +47,18 @@ table { border-collapse: collapse; border-spacing: 0; }
 .main-menu.compact ul { display: none; }
 /* line 16, sass/menu.sass */
 .main-menu.compact ul li { float: none; }
+
+/* line 14, sass/buttons.sass */
+.btn-mini { font-size: 0.85em; padding: 0.425em 0.85em; }
+
+/* line 14, sass/buttons.sass */
+.btn-small { font-size: 1.105em; padding: 0.5525em 1.105em; }
+
+/* line 14, sass/buttons.sass */
+.btn-large { font-size: 1.4365em; padding: 0.71825em 1.4365em; }
+
+/* line 20, sass/buttons.sass */
+.btn { -webkit-border-radius: 0.18em; border-radius: 0.18em; text-decoration: none; }
+
+/* line 23, sass/style.sass */
+body { font-family: "Open Sans", sans-serif; font-weight: 600; }
