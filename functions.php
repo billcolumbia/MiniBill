@@ -24,6 +24,8 @@ add_filter('wp_nav_menu_items', 'nav_add_search_box', 10, 2);
 
 /* Remove menus from the admin dashboard
  *
+ * In order to use this function, uncomment "add_action(...)" at the end.
+ *
  * All of the administration pages are listed here (in order of appearance in the dashboard)
  * so that you may choose which are removed.  If you remove a main page, you do not also
  * need to remove its subpages.
@@ -76,6 +78,17 @@ function remove_menus() {
 //add_action('admin_menu', 'remove_menus');
 
 
+/* Sample Custom Post Type
+ *
+ * In order to use this function, uncomment "add_action(...)" at the end.
+ *
+ * This code will add a new type of post to the site called "news".  It will appear
+ * in the dashboard and have the features mentioned in the "supports" field.
+ *
+ * Full documentation for register_post_type() can be found at:
+ * 		http://codex.wordpress.org/Function_Reference/register_post_type
+ */
+
 function custom_post_types() {
 
 	register_post_type('news', array(
@@ -93,14 +106,20 @@ function custom_post_types() {
 //add_action('init', 'custom_post_types');
 
 
-/* Change dashboard icons for the custom post types. */
+/* Change dashboard icons for the custom post types.
+ *
+ * In order to use this function, uncomment "add_action(...)" at the end.
+ *
+ * This CSS uses an icon from the cpt_icons collection for a custom post type
+ * in the dashboard.  Place the icon in the resources directory.
+ */
 
 function cpt_icons() {
 
 	?>
 	<style type="text/css" media="screen">
 		#menu-posts-news .wp-menu-image {
-			background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/news.png) no-repeat 6px -17px !important;
+			background: url(<?php echo get_stylesheet_directory_uri(); ?>/resources/news.png) no-repeat 6px -17px !important;
 		}
 		#menu-posts-news:hover .wp-menu-image, #menu-posts-news.wp-has-current-submenu .wp-menu-image {
 			background-position: 6px 7px!important;
