@@ -48,6 +48,11 @@
 ?>
 						<li<?php echo $nav_li_class; ?>><a href="<?php echo $link; ?>"><?php echo $name; ?></a></li>
 <?php 						} ?>
+						<li>
+							<form method="get" id="searchform" class="searchform" action="http://localhost/wp/" role="search">
+								<input type="search" class="field" name="s" value="" id="s" placeholder="Search &#133;" />
+							</form>
+						</li>
 					</ul>
 				</nav>
 			</header>
