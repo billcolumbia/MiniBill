@@ -1,0 +1,77 @@
+// Information about the logo file
+
+$source: url(resources/logos.png)
+
+$osi_width: 160px
+$ucf_width: 360px
+$sga_width: 150px
+$dg_width: 130px
+
+$total_width: 800px
+$height: 150px
+
+// Calculations to "center" each image within its space
+
+$osi_offset: 0%
+$ucf_offset: ($osi_width) / ($total_width - $ucf_width) * 100%
+$sga_offset: ($osi_width + $ucf_width) / ($total_width - $sga_width) * 100%
+$dg_offset: 100%
+
+footer
+	.logos
+		font-size: 0
+		height: 150px
+		text-align: center
+		margin: auto
+		width: 100%
+
+	.osi, .ucf, .sga, .dg
+		background:
+			image: $source
+			repeat: no-repeat
+		display: inline-block
+		height: $height
+		text-indent: -10000px
+
+	.osi
+		background-position: 0 0
+		width: $osi_width
+
+	.ucf
+		background-position: -$osi_width 0
+		width: $ucf_width
+
+	.sga
+		background-position: -($osi_width + $ucf_width) 0
+		width: $sga_width
+
+	.dg
+		background-position: -($osi_width + $ucf_width + $sga_width) 0
+		width: $dg_width
+
+@media screen and (max-width: $total_width)
+	footer
+		.osi, .ucf, .sga, .dg
+			padding-top: $height / $total_width * 100%
+			line-height: 0
+			height: 0
+
+		.osi
+			background-position: $osi_offset 0
+			background-size: $total_width / $osi_width * 100%
+			width: $osi_width / $total_width * 100%
+
+		.ucf
+			background-position: $ucf_offset 0
+			background-size: $total_width / $ucf_width * 100%
+			width: $ucf_width / $total_width * 100%
+
+		.sga
+			background-position: $sga_offset 0
+			background-size: $total_width / $sga_width * 100%
+			width: $sga_width / $total_width * 100%
+
+		.dg
+			background-position: $dg_offset 0
+			background-size: $total_width / $dg_width * 100%
+			width: $dg_width / $total_width * 100%
