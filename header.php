@@ -33,7 +33,7 @@
 <?php
 							$current_ID = $post->ID;
 
-							$navQuery = array('post_type' => 'page', 'post_status' => 'publish', 'posts_per_page' => -1, 'orderby' => 'menu_order', 'order' => 'ASC');
+							$navQuery = array('post_type' => 'page', 'post_status' => 'publish', 'posts_per_page' => -1, 'meta_key' => 'page-form-order', 'orderby' => 'meta_value', 'order' => 'ASC');
 							$navLoop = new WP_Query($navQuery);
 
 							while ($navLoop->have_posts()) {
@@ -44,10 +44,12 @@
 								$link = get_permalink();
 								$nav_li_class = (get_the_ID() == $current_ID) ? ' class="current" ' : '';
 
+								if (get_post_meta($post->ID, 'page-form-visible', true) == 'show') {
 							
 ?>
 						<li<?php echo $nav_li_class; ?>><a href="<?php echo $link; ?>"><?php echo $name; ?></a></li>
-<?php 						} ?>
+<?php 							}
+							} ?>
 						<li>
 							<form method="get" id="searchform" class="searchform" action="http://localhost/wp/" role="search">
 								<input type="search" class="field" name="s" value="" id="s" placeholder="Search &#133;" />
