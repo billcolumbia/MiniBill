@@ -1,23 +1,47 @@
+
+
+
+////////////////
+// Navigation //
+////////////////
+
+// Use this variable to set the breakpoint at which the menu changes.
+var breakPoint = 700;
+
+
+// This function uses CSS classes to change the appearance of the menu.
+function adjustNav() {
+
+	if ($(document).width < breakPoint) {
+
+		$("nav.main-menu").removeClass("full").addClass("compact");
+		$("nav.main-menu ul").hide();
+	}
+
+	else {
+
+		$("nav.main-menu").removeClass("compact").addClass("full");
+		$("nav.main-menu ul").show();
+	}
+}
+
+// When the document loads, adjust the nav and add click handlers for the
+// mobile view of the menu.
+
 $(document).ready(function () {
-  // Run function to make sure nav is setup for current viewport
-  adjustNav();
-  $(".menu-toggle").click(function(){
-    $("nav.main-menu .menu").toggle();
-  });
+
+	adjustNav();
+
+	$(".menu-toggle").click(function (evt) {
+
+		$("nav.main-menu ul").slideToggle();
+		evt.preventDefault();
+	})
 });
 
-// Will adjust classes and properties to display the correct menu
-var adjustNav = function(){
-  if($(document).width() < 767){
-    $("nav.main-menu").removeClass("full").addClass("compact");
-    $(".compact-menu").css("display", "block");
-  }
-  if($(document).width() > 767){
-    $("nav.main-menu").removeClass("compact").addClass("full");
-    $(".compact-menu").css("display", "none");
-  }
-}
-// If the viewport is resized, re-evaluate which menu to display
-$(window).resize(function() {
-  adjustNav();
+
+// On window resize, reevaluate the view of the navigation.
+$(window).resize(function () {
+
+	adjustNav();
 });

@@ -1,18 +1,26 @@
-.screen-reader-text, .compact-menu
-	display: none
+nav.main-menu
 
-// Horizontal Menu (Large width)
-.main-menu.full ul
-	li
-		float: left
-		position: relative
+	display: block
+	width: 100%
+	
 	a
 		display: block
 		text-decoration: none
+	
 
-// Vertical drop down menu (Compact width)
-.main-menu.compact ul
-	display: none 
+nav.main-menu.full ul
+
+	display: block
+	
+
+nav.main-menu.compact ul
+
+	display: none
+	width: 100%
+	
 	li
-		float: none
-	 
+		display: block
+
+
+.screen-reader-text, .compact-menu
+	display: none
