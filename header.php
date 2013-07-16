@@ -1,4 +1,3 @@
-<!-- HEADER START -->
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
