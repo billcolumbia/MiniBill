@@ -43,8 +43,8 @@ function remove_menus() {
 	if ($user->wp_capabilities['administrator'] != 1) {
 
 			remove_submenu_page('index.php', 'update-core.php');
-		remove_menu_page('edit.php?post_type=page');
-			remove_submenu_page('edit.php', 'post-new.php?post_type=page');
+		//remove_menu_page('edit.php?post_type=page');
+			//remove_submenu_page('edit.php', 'post-new.php?post_type=page');
 		remove_menu_page('themes.php');
 			remove_submenu_page('themes.php', 'widgets.php');
 			remove_submenu_page('themes.php', 'nav-menus.php');
